@@ -29,7 +29,10 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   
   1. What is the difference between counter1 and counter2?
   
+  the difference between counter1 and counter2 is counter1 is a variable that holds the function countMaker
+  and counter2 is what we use to update the count in countMaker
   2. Which of the two uses a closure? How can you tell?
+  counter2 uses closure with count
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
@@ -62,8 +65,8 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+    return Math.floor(Math.random( * 3))
 }
 
 
@@ -81,8 +84,8 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*code Here*/){
-  /*Code Here*/
+function finalScore(inningCB, innings ){
+  
 }
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️

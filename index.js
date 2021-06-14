@@ -68,7 +68,7 @@ NOTE: This will be a callback function for the tasks below
 */
 
 function inning(){
-    return Math.floor(Math.random(3))
+    return Math.floor(Math.random() * 3)
 }
 
 
@@ -109,7 +109,7 @@ function getInningScore(inningCB) {
   let inningScore = {};
   let homeScore = inningCB();
   let awayScore = inningCB();
-  inningScore = {Home: homeScore, Away: awayScore}
+  inningScore = { Home: homeScore, Away: awayScore }
   return inningScore
 
 }
@@ -156,12 +156,32 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(getInningScoreCB, inningCB, innings) {
+  let game = [];
+  let homeScore = 0;
+  let awayScore = 0;
+  for (let i = 0; i < innings; i++) {
+    const inningScore = getInningScoreCB(inningCB);
+    game.push(
+      `Inning ${i + 1}: Away ${inningScore.Away} - Home: ${inningScore.Home}`
+    );
+    homeScore = homeScore + inningScore.Home;
+    awayScore = awayScore + inningScore.Away;
+  }
+  if (homeScore === awayScore) {
+    game.push(
+      `This game will require extra innings: Away ${awayScore} - Home ${homeScore}`
+    );
+  } else {
+    game.push(`Final Score: Away ${awayScore} - Home ${homeScore}`);
+  }
+  console.log(game);
+  return game;
 }
 
+scoreboard(getInningScore, inning, 9);
 
-
+// console.log(game)
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
 function foo(){

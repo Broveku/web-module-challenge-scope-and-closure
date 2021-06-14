@@ -28,14 +28,16 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
-  
-  the difference between counter1 and counter2 is counter1 is a variable that holds the function countMaker
-  and counter2 is what we use to update the count in countMaker
+  counter1 is couting from 0 zero everytime it is called and updating however counter 2 is also counting from 0 but it is NOT updating
+ 
   2. Which of the two uses a closure? How can you tell?
-  counter2 uses closure with count
+  counter1 IS using closure becuase it has a parent function to pull from whereas counter 2 does NOT pull from a parent function
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+
+     counter1 would be preferable when needing to count score in a sporting game, since it contiunes to update the score everytime the function is called.
+     counter2 would be preferable when needing to count up WITHOUT updating the previous count
 */
 
 // counter1 code
